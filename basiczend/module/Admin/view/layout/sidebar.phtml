@@ -1,0 +1,19 @@
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+            <li class="header">MAIN NAVIGATION</li>
+            <li class="treeview <?php echo (strtolower($controller2) == "index" && $actionMenu == "index") ? 'active' : ''; ?>">
+                <a href="<?php echo $this->url('admin'); ?>">
+                    <i class="fa fa-dashboard"></i> <span>Dashboard</span> 
+                </a>             
+            </li>
+
+
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>

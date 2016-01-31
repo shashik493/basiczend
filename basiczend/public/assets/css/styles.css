@@ -1,0 +1,64 @@
+.modal-footer {   border-top: 0px; }
+.margin-top-30 {margin: 8% auto;}
+.margin-top-13_P {margin: 13% auto;}
+.margin-top-20 {margin-top: 20px !important;}
+.success-msg-bg{ background-color: #3c8dbc !important;}
+.success-msg-bg ul{ text-decoration: none;}
+.success-msg-bg ul li{ text-decoration: none;color:#fff;}
+.alert .close {color: #fff;opacity: 1.2;filter: alpha(opacity=20);}
+.width_20{width:20% !important;}
+.width_40{width:40% !important;}
+.clear_T10{clear:both !important;margin-top:10px;}
+.clear_T20{clear:both !important;margin-top:30px;}
+.error{color:red;}
+.padding_5{padding: 5px !important;}
+form{margin-top: 20px;}
+.form{margin-top:0px !important;}
+.margin_left_5{margin-left: 5px;}
+.top_4_p{margin-top: 4% ;}
+
+/* contact page paging css here*/
+ul.pagination{
+    margin:0 auto;
+    padding:0px;
+    height:100%;
+    overflow:hidden;
+    font:12px 'Tahoma';
+    list-style-type:none;   
+    width:60% !important;
+    display:block !important;
+}
+
+ul.pagination li.details{
+    padding:7px 10px 7px 10px;
+    font-size:14px;
+}
+
+ul.pagination li.dot{padding: 3px 0;}
+
+ul.pagination li{
+    float:left;
+    margin:0px;
+    padding:0px;
+    margin-left:5px;
+}
+
+ul.pagination li:first-child{
+    margin-left:0px;
+}
+
+ul.pagination li a{
+    color:black;
+    display:block;
+    text-decoration:none;
+    padding:7px 10px 7px 10px;
+}
+
+ul.pagination li a img{
+    border:none;
+}
+.current{
+    background-color: #337ab7 !important;
+    border-color: #337ab7 !important;
+    color:#fff !important;
+}

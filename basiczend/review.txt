@@ -1,0 +1,18 @@
+Database Folder Located in : /ouag/database (files are need to upload)
+
+
+
+
+
+Database name:ouag		:/ouag/database/ouag.sql
+
+Database name:yourls		:/ouag/database/yourls.sql
+
+
+
+
+
+
+
+
+

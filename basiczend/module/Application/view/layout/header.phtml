@@ -1,0 +1,71 @@
+
+<?php
+$activePage = $this->getHelperPluginManager()->getServiceLocator()->get('application')->getMvcEvent()->getRouteMatch()->getParam('param1');
+
+$topmenuActionArray = $this->getHelperPluginManager()->getServiceLocator()->get('application')->getMvcEvent()->getRouteMatch()->getParams();
+$actionMenu = $topmenuActionArray['action'];
+//exit;
+?>
+<header class="main-header">
+        <!-- Logo -->
+        <a href="javascript:void(0);" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b>M</b>LF</span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><b>USER</b>MLF</span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="javascript:void(0);" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          
+          <?php $userName = $userData->firstname. " ".$userData->lastname; ?>
+          
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">          
+              <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <img src="/public/assets/img/user.png" class="user-image" alt="User Image"/>
+                  <span class="hidden-xs"><?php echo substr($userName,0,12); ?></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- User image -->
+                  <li class="user-header">
+                    <img src="/public/assets/img/user.png" class="img-circle" alt="User Image" />
+                    <p>
+                      <?php echo $userName; ?>
+                     <small>Last Login. <?php echo $loggedInUserDate;?></small>
+                      <small>Member since <?php echo date('M . Y',strtotime($userData->created_at))?></small>
+                    </p>
+                  </li>
+                  <!-- Menu Body -->
+                  <?php /* <li class="user-body">
+                    <div class="col-xs-4 text-center">
+                      <a href="#">Followers</a>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                      <a href="#">Sales</a>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                      <a href="#">Friends</a>
+                    </div>
+                  </li> */ ?>
+                  <!-- Menu Footer-->
+                  <li class="user-footer">
+                    <div class="pull-left">
+                      <a href="<?php echo $this->url('dashboard'); ?>" class="btn btn-primary btn-flat">Dashboard</a>
+                    </div>
+                    <div class="pull-right">
+                      <a href="<?php echo $this->url('dashboard', array('action' => 'logout')); ?>" class="btn btn-primary btn-flat">Sign out</a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <!-- Control Sidebar Toggle Button -->
+             
+            </ul>
+          </div>
+        </nav>
+      </header>

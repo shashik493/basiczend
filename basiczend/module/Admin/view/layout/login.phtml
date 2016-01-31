@@ -1,0 +1,66 @@
+<?php echo $this->doctype(); ?>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle('ZF2 ' . $this->translate('Skeleton Application'))->setSeparator(' - ')->setAutoEscape(false) ?>
+        <?php
+        echo $this->headMeta()
+                ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+                ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+        <!-- Le styles -->
+        <?php
+        echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                ->prependStylesheet($this->basePath() . '/public/assets/css/styles.css')
+                ->prependStylesheet($this->basePath() . '/public/assets/bootstrap/css/bootstrap.min.css');
+        ?>
+        <!-- Scripts -->
+        <?php
+        echo $this->headScript()
+                ->prependFile($this->basePath() . '/public/assets/js/common.js')
+                ->prependFile($this->basePath() . '/public/assets/js/jquery.validate.1.9.min.js')
+                ->prependFile($this->basePath() . '/public/assets/bootstrap/js/bootstrap.min.js')
+                ->prependFile($this->basePath() . '/public/assets/plugins/jQuery/jQuery-2.1.4.min.js');
+        ?>
+
+    </head>
+    <body class="skin-blue sidebar-mini">
+        <div class="wrapper">
+            <?php include('messages.phtml'); ?>
+            <?php echo $this->content; ?>
+            <?php echo $this->inlineScript() ?>
+            <script>
+                if (jQuery("#login").length > 0) {
+                    $().ready(function () {
+                        jQuery.validator.addMethod("noSpace", function (value, element) {
+                            return value.indexOf(" ") < 0 && value != "";
+                        }, "No space please and don't leave it empty");
+                        // validate user form on keyup and submit
+                        $("#login").validate({
+                            rules: {
+                                user_email: {
+                                    required: true,
+                                    email: true,
+                                    noSpace: true
+                                },
+                                user_password: {
+                                    required: true,
+                                    noSpace: true
+                                },
+                                agree: "required"
+                            },
+                            messages: {
+                                user_email: "Please enter a valid email address",
+                                user_password: {
+                                    required: "Please enter a password",
+                                    noSpace: "No space allowed in password"
+                                }
+                            }
+                        });
+                    });
+                }
+
+            </script>
+        </div><!-- ./wrapper -->
+    </body>
+</html>

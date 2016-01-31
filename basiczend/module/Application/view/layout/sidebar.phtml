@@ -1,0 +1,42 @@
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->   
+
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+            <li class="header">MAIN NAVIGATION</li>
+            <li class="treeview <?php echo ($actionMenu == "index") ? 'active' : ''; ?>">
+                <a href="<?php echo $this->url('dashboard'); ?>">
+                    <i class="fa fa-dashboard"></i> <span>Dashboard</span> 
+                </a>             
+            </li>
+
+             <li class="treeview <?php echo (strtolower($controllerM) == "contact") ? 'active' : ''; ?>">
+                <a href="#">
+                    <i class="fa fa-connectdevelop"></i> <span>Contacts</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+
+                    <li class="<?php echo (strtolower($controllerM) == "contact" && $actionMenu == "index") ? 'active' : ''; ?>">
+                        <a href="<?php echo $this->url('contact'); ?>"><i class="fa fa-circle-o"></i> List Contacts</a></li>
+                    <?php /*  <li class="<?php echo (strtolower($controllerM) == "contacts" && $actionMenu == "edit") ? 'active' : ''; ?>"><a href="<?php echo $this->url('contacts', array('action' => 'edit')); ?>"><i class="fa fa-circle-o"></i> Manual Create</a></li>
+                     */ ?>
+                    <li class="<?php echo (strtolower($controllerM) == "contact" && $actionMenu == "import") ? 'active' : ''; ?>"><a href="<?php echo $this->url('contact', array('action' => 'import')); ?>"><i class="fa fa-circle-o"></i> Bulk Upload</a></li>
+                    <li class="<?php echo (strtolower($controllerM) == "contact" && $actionMenu == "importlist") ? 'active' : ''; ?>"><a href="<?php echo $this->url('contact', array('action' => 'importlist')); ?>"><i class="fa fa-circle-o"></i> Import List</a></li>
+                </ul>
+            </li>
+                
+             <li class="treeview <?php echo ($actionMenu == "changepassword") ? 'active' : ''; ?>">
+                <a href="<?php echo $this->url('dashboard', array('action' => 'changepassword')); ?>">
+                    <i class="fa fa-cogs"></i> <span>Change Password</span> 
+                </a>             
+            </li> 
+            
+            
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>

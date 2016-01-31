@@ -1,0 +1,55 @@
+<?php echo $this->doctype(); ?>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle('DEMO' . $this->translate(' Application'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php
+        echo $this->headMeta()
+                ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+                ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+        <!-- Le styles -->
+        <?php
+        echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/assets/img/favicon.ico'))
+                ->prependStylesheet($this->basePath() . '/public/assets/css/bootstrap-dialog.min.css')
+                ->prependStylesheet($this->basePath() . '/public/assets/bootstrap/css/bootstrap.min.css')
+                ->prependStylesheet($this->basePath() . '/public/assets/css/styles.css')
+                ->prependStylesheet($this->basePath() . '/public/assets/dist/css/AdminLTE.min.css')
+                ->prependStylesheet($this->basePath() . '/public/assets/dist/css/skins/_all-skins.min.css')
+                ->prependStylesheet($this->basePath() . '/public/assets/css/font-awesome.min.css');
+        ?>
+        <?php
+        echo $this->headScript()
+                ->prependFile($this->basePath() . '/public/assets/js/common.js')
+                ->prependFile($this->basePath() . '/public/assets/js/jquery.validate.1.9.min.js')
+                ->prependFile($this->basePath('/public/assets/js/bootstrap-dialog.min.js'))
+           //     ->prependFile($this->basePath() . '/assets/js/jquery.validate.1.9.min.js')
+                ->prependFile($this->basePath() . '/public/assets/dist/js/app.min.js')
+                ->prependFile($this->basePath() . '/public/assets/dist/js/demo.js')
+                ->prependFile($this->basePath() . '/public/assets/bootstrap/js/bootstrap.min.js')
+                ->prependFile($this->basePath() . '/public/assets/js/jQuery-2.1.4.min.js');
+        ?>     
+    </head>
+
+    <?php
+    $controller = $this->getHelperPluginManager()->getServiceLocator()->get('application')->getMvcEvent()->getRouteMatch()->getParam('controller', 'index');
+    $controller1 = explode('\\', $controller);
+    $controller2 = array_pop($controller1);
+    ?>
+
+
+
+    <body class="skin-blue sidebar-mini">
+        <div class="wrapper">
+            <?php include('header.phtml'); ?>
+            <?php include('sidebar.phtml'); ?>
+            <?php include('messages.phtml'); ?>
+            <?php echo $this->content; ?>          
+            <?php include('footer.phtml'); ?>
+        </div><!-- ./wrapper -->
+    </body>     
+    <?php
+    echo $this->inlineScript();       
+    ?>
+</html>
